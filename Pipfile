@@ -8,6 +8,9 @@ verify_ssl = true
 [packages]
 django = "*"
 djangorestframework = "*"
+factory-boy = "*"
+faker = "*"
+bpython = "*"
 
 [requires]
 python_version = "3.8"
