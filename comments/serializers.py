@@ -16,7 +16,7 @@ class CommentBaseSerializer(serializers.ModelSerializer):
 class ReCommentSerializer(serializers.ModelSerializer):
     """ ReComment Serializer """
 
-    original_comment = CommentBaseSerializer()
+    # original_comment = CommentBaseSerializer()
     
     class Meta:
         model = models.ReComment
