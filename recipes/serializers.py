@@ -10,12 +10,26 @@ class IngredientSubCategorySerializer(serializers.ModelSerializer):
         model = models.IngredientSubCategory
         fields = ('name',)
 
+class IngredientCategorySerializer(serializers.ModelSerializer):
+    """ IngredientSubCategory Serializer """
+    
+    class Meta:
+        model = models.IngredientCategory
+        fields = ('name',)
+
 class IngredientSerializer(serializers.ModelSerializer):
     """ Ingredient Serializer """
-    category = IngredientSubCategorySerializer()
+
     class Meta:
         model = models.Ingredient
-        fields = ('name', 'category', 'quantity', 'quantity_type')
+        fields = ('name', 'category', 'sub_category')
+
+class RecipeIngredientSerializer(serializers.ModelSerializer):
+    """ Ingredient Serializer """
+    # ingredient = IngredientSerializer()
+    class Meta:
+        model = models.RecipeIngredient
+        fields = ('ingredient', 'prepared', 'quantity', 'quantity_type')
 
 
 class RecipeSerializer(serializers.ModelSerializer):
